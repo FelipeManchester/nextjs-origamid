@@ -13,6 +13,9 @@ const Menu = () => {
         </li>
         <li>
           <Link href={'/sobre'}>Sobre</Link>
+        </li>{' '}
+        <li>
+          <Link href={'/imc'}>Calcule seu IMC</Link>
         </li>
       </ul>
     </div>
