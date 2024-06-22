@@ -1,0 +1,15 @@
+O que são server components?
+Eles possuem acesso a API do servidor (Node) como ofs, path e outras implementads pelo Next.js... Como o fetch e cookies. Renderizam no servidor.
+
+Por padrão, todos os componentes são server components.
+
+Client Components 
+Possui acesso as APIs web como window e document... bem como as APIs do Next.JS e do React, como useState e useEffect. Continum sendo pré-renderizados nos ervidor, mas são "hidratados" (hydration) no cliente.
+
+Pra definir um componente como client component, basta adicionar 'use client'  na primeira linha do componente.
+
+Componentes do tipo SERVER permitem a importação de componentes do tipo Client
+
+mas
+
+Componentes do tipo CLIENT NÃO permitem a importação de componentes do tipo SERVER
