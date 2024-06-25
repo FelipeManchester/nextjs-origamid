@@ -17,6 +17,9 @@ const Menu = () => {
         <li>
           <Link href={'/imc'}>Calcule seu IMC</Link>
         </li>
+        <li>
+          <Link href={'/produtos'}>Produtos</Link>
+        </li>
       </ul>
     </div>
   );
