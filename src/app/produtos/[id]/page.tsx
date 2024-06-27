@@ -22,7 +22,6 @@ const ProdutoPage = async ({ params }: PageParams) => {
   const data = (await response.json()) as Produto;
   return (
     <div>
-      <Menu />
       <h1>Produto:</h1>
       <h3>{data.nome}</h3>
       <p>R$ {data.preco}</p>

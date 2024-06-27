@@ -4,7 +4,6 @@ import React from 'react';
 const ContatoPage = () => {
   return (
     <div>
-      <Menu />
       <h1>Contato</h1>
     </div>
   );

@@ -1,4 +1,3 @@
-import Menu from '@/components/Menu';
 import Link from 'next/link';
 import React from 'react';
 
@@ -16,7 +15,6 @@ const ProdutosPage = async () => {
   const data = (await response.json()) as Produto[];
   return (
     <div>
-      <Menu />
       <h1>ProdutosPage</h1>
       <ul>
         {data.map((produto) => (
