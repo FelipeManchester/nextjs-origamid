@@ -1,0 +1,22 @@
+import { getAula } from '@/api/cursos';
+import Link from 'next/link';
+import React from 'react';
+type PageParams = {
+  params: {
+    curso: string;
+    aula: string;
+  };
+};
+const AulaPage = async ({ params }: PageParams) => {
+  const aula = await getAula(params.curso, params.aula);
+  return (
+    <div>
+      <Link href={`/cursos/${params.curso}`}>{params.curso}</Link>
+      <h1>{aula.nome}</h1>
+      <p>{aula.descricao}</p>
+      <p>Tempo: {aula.tempo}</p>
+    </div>
+  );
+};
+
+export default AulaPage;

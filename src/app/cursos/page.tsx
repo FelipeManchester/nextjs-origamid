@@ -1,30 +1,16 @@
+import { getCursos } from '@/api/cursos';
 import Link from 'next/link';
 import React from 'react';
 
-type PageParams = {
-  params: {
-    slugs: string;
-  };
-};
-
-type Cursos = {
-  id: number;
-  slug: string;
-  nome: string;
-  descricao: string;
-  total_aulas: number;
-  total_horas: number;
-};
-const CursosPage = async ({ params }: PageParams) => {
-  const response = await fetch(`https://api.origamid.online/cursos/`);
-  const data = (await response.json()) as Cursos[];
-
+const CursosPge = async () => {
+  const cursos = await getCursos();
   return (
     <div>
+      <h1>Cursos disponíveis:</h1>
       <ul>
-        {data.map((cursos) => (
-          <li key={cursos.id}>
-            <Link href={`/cursos/${cursos.slug}`}>{cursos.nome}</Link>
+        {cursos.map((curso) => (
+          <li key={curso.id}>
+            <Link href={`/cursos/${curso.slug}`}>{curso.nome}</Link>
           </li>
         ))}
       </ul>
@@ -32,4 +18,4 @@ const CursosPage = async ({ params }: PageParams) => {
   );
 };
 
-export default CursosPage;
+export default CursosPge;
